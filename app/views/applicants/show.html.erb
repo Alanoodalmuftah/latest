@@ -1,0 +1,231 @@
+<br>
+<br>
+<br>
+<br>
+
+<h2 class="fonty" align="center"> بيانات المتقدم</h2>
+<br>
+<br>
+<br>
+<div>
+
+
+
+
+
+
+<h4 class="eventheading" align="center">
+ البيانات الشخصية
+</h4>
+
+<table class="fonty table2" align="center" rules="all">	
+	
+<tr>		
+ <th class="tablespace1 eventheading down"> الاسم:</th>
+  <th class="tablespace1 down"><%= @applicant.name %></th>
+</tr>
+
+<tr>
+<th class="tablespace1 eventheading down"> الرقم الشخصي: </th>
+ <th class="tablespace1 down"> <%= @applicant.QID %> </th>
+</tr>
+
+
+<tr>
+<th class="tablespace1 eventheading down">  الجنسية: </th>
+ <th class="tablespace1 down"> <%= @applicant.nationality %> </th>
+</tr>
+
+
+<tr>
+ <th class="tablespace1 eventheading down"> تاريخ الميلاد:</th>
+ <th class="tablespace1 down"> <%= @applicant.dob %> </th>
+</tr>
+
+<tr>
+  <th class="tablespace1 eventheading down">الجنس:</th>
+ <th class="tablespace1 down"> <%= @applicant.gender %></th>
+</tr>
+
+
+<tr>
+  <th class="tablespace1 eventheading down">الحالة الاجتماعية: </th>
+  <th class="tablespace1 down"><%= @applicant.status %> </th>
+</tr>
+
+<tr>
+  <th class="tablespace1 eventheading down">عدد الأطفال:</th>
+  <th class="tablespace1 down"><%= @applicant.noOfChildren %></th>
+</tr>
+
+
+<tr>
+  <th class="tablespace1 eventheading down">المنطقة السكنية:</th>
+  <th class="tablespace1 down"><%= @applicant.livingArea %></th>
+</tr>
+
+
+<tr>
+  <th class="tablespace1 eventheading down">رقم الهاتف:</th>
+  <th class="tablespace1 down"><%= @applicant.phoneNo %></th>
+</tr>
+
+<tr>
+  <th class="tablespace1 eventheading down">رقم الجوال:</th>
+  <th class="tablespace1 down"><%= @applicant.mobileNo %></th>
+</tr>
+
+
+</table>
+<br>
+
+
+
+<h4 class="eventheading" align="center" >
+حالة الإعاقة 
+</h4>
+
+<table class="fonty table2" align="center" rules="all">
+
+
+
+<tr>
+  <th class="tablespace1 eventheading down">نوع الإعاقة:</th>
+  <th class="tablespace1 down" ><%= @applicant.disability %></th>
+</tr>
+
+<tr>
+  <th class="tablespace1 eventheading down">التفاصيل:</th>
+  <th class="tablespace1 down"><%= @applicant.details %></th>
+</tr>
+
+
+
+<tr>
+  <th class="tablespace1 eventheading down">ملاحظات:</th>
+  <th class="tablespace1 down"><%= @applicant.notes %></th>
+</tr>
+
+<tr>
+  <th class="tablespace1 eventheading down">العمر عند الإصابة بالإعاقة:</th>
+  <th class="tablespace1 down"><%= @applicant.age %></th>
+</tr>
+
+<tr>
+  <th class="tablespace1 eventheading down">أسباب الإصابة:</th>
+  <th class="tablespace1 down"><%= @applicant.reason %></th>
+</tr>
+
+
+</table>
+<br>
+
+
+<h4 class="eventheading" align="center" >
+المؤهلات والخبرات
+</h4>
+
+
+<table class="fonty table2" align="center" rules="all">
+<tr>	
+  <th class="tablespace1 eventheading down">المستوى التعليمي:</th>
+  <th class="tablespace1 down"><%= @applicant.education %></th>
+</tr>
+
+
+<tr>
+  <th class="tablespace1 eventheading down">الدورات:</th>
+  <th class="tablespace1 down"><%= @applicant.workshop %></th>
+</tr>
+
+
+<tr>
+  <th class="tablespace1 eventheading down"> هل يشغل وظيفة حاليًا:</th>
+  <th class="tablespace1 down"><%= human_boolean(@applicant.currentJob) %></th>
+</tr>
+
+
+<tr>
+<p class="fonty">
+  <th class="tablespace1 eventheading down">الوظائف التي عملت بها:</th>
+  <th class="tablespace1 down"><%= @applicant.jobDescription %></th>
+</p>
+</tr>
+
+
+<tr>
+<p class="fonty">
+  <th class="tablespace1 eventheading down">الوظيفة التي تستطيع القيام بها:</th>
+  <th class="tablespace1 down"><%= @applicant.abilities %></th>
+</p>
+</tr>
+
+<tr>
+<p class="fonty">
+  <th class="tablespace1 eventheading down">الوزارات/ المؤسسات المرشحة للتوظيف:</th>
+  <th class="tablespace1 down"><%= @applicant.preference %></th>
+</p>
+</tr>
+
+<tr>
+<p class="fonty">
+  <th class="tablespace1 eventheading down">الخبرات:</th>
+  <th class="tablespace1 down"><%= @applicant.skills %></th>
+</p>
+</tr>
+
+
+
+<tr>
+  <th class="tablespace1 eventheading down">  هل تم التوظيف من قبل اللجنة</th>
+  <th class="tablespace1 down"><%= @applicant.employed ? "نعم" : "لا" %></th>
+</tr>
+<br>
+</table>
+
+<br>
+<br>
+<p class="fonty showpad">
+<strong>صورة البطاقة الشخصية:</strong> 
+<%= image_tag @applicant.image.url, :class => "idimg"  %>
+</p>
+
+<p class="fonty showpad">
+ <strong>بطاقة العضوية لجمعية ذوي الإعاقة:</strong>
+<%= image_tag @applicant.membership.url , :class => "idimg"  %>
+</p>
+
+
+<p class="fonty showpad">
+    <strong>صورة السيرة الذاتية:</strong>
+	<%= image_tag @applicant.cv.url, :class => "idimg" %>
+</p>
+
+
+
+<br>
+<br>
+<p class="fonty floatR showpad" >
+<%= link_to 'تعديل', edit_applicant_path(@applicant) %> |
+<%= link_to 'رجوع', applicants_path %>
+</p>
+
+<br>
+<br>
+
+<div class="showpad">
+<button onclick="myFunction()" class="fonty floatR ">اطبع هذه الصفحة</button>
+</div>
+<script>
+function myFunction() {
+    window.print();
+}
+</script>
+<style>
+.print
+{
+	float:right;
+	padding-right: 150px;
+}
+</style>
+</div>
