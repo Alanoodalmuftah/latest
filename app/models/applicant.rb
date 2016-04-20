@@ -1,5 +1,14 @@
 class Applicant < ActiveRecord::Base
   
+  def self.table_search(table, entry)
+  if table and entry
+  @applicants = where table+' LIKE ?',"%"+entry+"%"
+  else
+  @applicants = all
+  end
+
+  end
+  
 	def self.search(search)
 		if search
 			where('name LIKE ? or nationality LIKE ? or dob LIKE ? or gender LIKE ? or disability LIKE ? 
