@@ -7,39 +7,39 @@ class ApplicantsController < ApplicationController
   # GET /applicants
   # GET /applicants.json
   def index
-      @applicants = Applicant.all
-      if params[:search]
-        @applicants = Applicant.search(params[:search])
-      end
+        @applicants = Applicant.all
+        if params[:search]
+          @applicants = Applicant.search(params[:search])
+        end
 
-      if params[:nationality] 
-        @applicants = @applicants.table_search('nationality', params[:nationality])
-      end
-      if params[:gender] 
-        @applicants = @applicants.table_search('gender', params[:gender])
-      end
-      if params[:status]
-        @applicants = @applicants.table_search('status', params[:status])
-      end
-      if params[:status]
-        @applicants = @applicants.table_search('disability', params[:status])
-      end
-      if params[:status]
-        @applicants = @applicants.table_search('education', params[:status])
-      end
-      if params[:status]
-        @applicants = @applicants.table_search('currentJob', params[:status])
-      end
-      if params[:status]
-        @applicants = @applicants.table_search('age', params[:status])
-      end
+        if params[:nationality] 
+          @applicants = @applicants.table_search('nationality', params[:nationality])
+        end
+        if params[:gender] 
+          @applicants = @applicants.table_search('gender', params[:gender])
+        end
+        if params[:status]
+          @applicants = @applicants.table_search('status', params[:status])
+        end
+        if params[:disability]
+          @applicants = @applicants.table_search('disability', params[:disability])
+        end
+        if params[:education]
+          @applicants = @applicants.table_search('education', params[:education])
+        end
+        if params[:currentJob]
+          @applicants = @applicants.table_search('currentJob', params[:currentJob])
+        end
+        if params[:age]
+          @applicants = @applicants.table_search('age', params[:age])
+        end
 
-      respond_to do |format|
-        format.html
-        format.js
-      end
+        respond_to do |format|
+          format.html
+          format.js
+        end
   
-    end
+      end
 
   # GET /applicants/1
   # GET /applicants/1.json

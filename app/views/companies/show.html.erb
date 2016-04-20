@@ -1,92 +1,125 @@
 <br>
 <br>
-<br>
+
+
+<h2 class="fonty" align="center"> بيانات الوظيفة المتاحة</h2>
 <br>
 
-<h2 class="fonty" align="center"> بيانات الوظيفة</h2>
-<br>
-<br>
-<br>
-<div class="formpad">
-<p class="fonty">
-  <strong >اسم المؤسسة:</strong>
-  <%= @company.companyName %>
-</p>
-<br>
-<p class="fonty">
-  <strong>المسمى الوظيفي :</strong>
-  <%= @company.jobTitle %>
-</p>
-<br>
 
-<p class="fonty">
-  <strong>تفاصيل الوظيفة:</strong>
-  <%= @company.jobDescription %>
-</p>
-<br>
 
-<p class="fonty">
-  <strong>عدد الموظفين المطلوبين:</strong>
-  <%= @company.noOfEmployees %>
-</p>
-<br>
 
-<p class="fonty">
-  <strong>اسم مقدم الطلب:</strong>
-  <%= @company.contactPerson %>
-</p>
-<br>
 
-<p class="fonty">
-  <strong>رقم التواصل:</strong>
-  <%= @company.mobileNo %>
-</p>
-<br>
 
-<p class="fonty">
-  <strong>البريد الالكتروني:</strong>
-  <%= @company.email %>
-</p>
-<br>
+<table class="fonty table2" align="center" rules="all">	
 
-<p class="fonty">
-  <strong>الجنسية:</strong>
-  <%= @company.nationality %>
-</p>
-<br>
+<tr>
+	<th    colspan="2">
+<h4 align="center" class="eventheading down"> تفاصيل الوظيفة </h4>
+	</th>
+</tr>
 
-<p class="fonty">
-  <strong>الجنس:</strong>
-  <%= @company.gender %>
-</p>
-<br>
 
-<p class="fonty">
-  <strong>متوسط العمر:</strong>
-  <%= @company.age %>
-</p>
-<br>
+<tr>	
+ <th class="tablespace1 eventheading down">	 اسم المؤسسة </th>
+   <th class="tablespace1 down"> <%= @company.companyName %> </th>
+</tr>
 
-<p class="fonty">
-  <strong>نوع الإعاقة:</strong>
-  <%= @company.disability %>
-</p>
-<br>
 
-<p class="fonty">
-  <strong>المستوى التعليمي:</strong>
-  <%= @company.education %>
-</p>
+<tr>
+	<th class="tablespace1 eventheading down">المسمى الوظيفي </th>
+	<th class="tablespace1 down"> <%= @company.jobTitle %></th>
+</tr>
+
+
+
+<tr>
+	<th class="tablespace1 eventheading down">تفاصيل الوظيفة</th>
+	<th class="tablespace1 down">  <%= @company.jobDescription %></th>
+</tr>
+
+
+
+<tr>
+	<th class="tablespace1 eventheading down"> عدد الموظفين المطلوبين </th>
+ 	<th class="tablespace1 down"> <%= @company.noOfEmployees %></th>
+</tr>
+
+
+
+<tr>
+	<th class="tablespace1 eventheading down">اسم مقدم الطلب</th>
+  	<th class="tablespace1 down"><%= @company.contactPerson %> </th>
+</tr>
+
+
+
+<tr>
+	<th class="tablespace1 eventheading down"> رقم التواصل</th>
+	<th class="tablespace1 down"> <%= @company.mobileNo %></th>
+</tr>
+
+
+
+<tr>
+	<th class="tablespace1 eventheading down"> البريد الالكتروني</th>
+	<th class="tablespace1 down"> <%= @company.email %></th>
+</tr>
+
+
+
+
+
+<tr>
+	<th    colspan="2">
+<h4 align="center" class="eventheading down"> مواصفات الموظف المطلوبة </h4>
+	</th>
+</tr>
+
+
+
+<tr>
+<th class="tablespace1 eventheading down">	  الجنسية </th>
+  <th class="tablespace1  down"><%= @company.nationality %> </th>
+</tr>
+
+
+<tr>
+<th class="tablespace1 eventheading down">	  الجنس </th>
+<th class="tablespace1  down">  <%= @company.gender %> </th>
+</tr>
+
+
+<tr>
+<th class="tablespace1 eventheading down">	  متوسط العمر </th>
+<th class="tablespace1  down">  <%= @company.age %> </th>
+</tr>
+
+
+<tr>
+<th class="tablespace1 eventheading down">	  نوع الإعاقة </th>
+<th class="tablespace1  down">  <%= @company.disability %> </th>
+</tr>
+
+
+<tr>
+<th class="tablespace1 eventheading down">	  المستوى التعليمي </th>
+<th class="tablespace1  down">  <%= @company.education %> </th>
+</tr>
+</table>
+
+
 <br>
 <br>
-<p class="fonty floatR" >
+<p class="fonty floatR showpad" >
 <%= link_to 'تعديل', edit_company_path(@company)%> |
 <%= link_to 'رجوع', companies_path %>
 </p>
+<br>
+<br>
 
-
-<button onclick="myFunction()" class="fonty">اطبع هذه الصفحة</button>
-
+<div class="showpad">
+<button onclick="myFunction()" class="fonty floatR">اطبع هذه الصفحة</button>
+</div>
 <script>
 function myFunction() {
     window.print();

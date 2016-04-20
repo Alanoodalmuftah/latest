@@ -8,9 +8,10 @@
  	<li class="dropdown navbar fonty">
            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> الاعدادات  <span class="caret"></span></a>
 		   <ul class="dropdown-menu">
-		               <li align="center"><%= link_to 'تسجيل الخروج', destroy_user_session_path, :method=>'delete', :class=>'fonty' %></li>
-					   <li role="separator" class="divider"></li>
-		               <li align="center"><%= link_to 'تعديل الحساب', edit_user_registration_path(@user), :class=>'fonty' %></li>
+			   
+			 <li align="center"><%= link_to 'تعديل الحساب', edit_user_registration_path(@user), :class=>'fonty' %></li>         
+			<li role="separator" class="divider"></li>
+			<li align="center"><%= link_to 'تسجيل الخروج', destroy_user_session_path, :method=>'delete', :class=>'fonty' %></li>
 
 		             </ul>
 	   </li>

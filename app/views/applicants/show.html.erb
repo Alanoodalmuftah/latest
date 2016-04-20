@@ -5,20 +5,22 @@
 
 <h2 class="fonty" align="center"> بيانات المتقدم</h2>
 <br>
-<br>
-<br>
+
+
 <div>
 
 
 
 
-
-
-<h4 class="eventheading" align="center">
- البيانات الشخصية
-</h4>
-
 <table class="fonty table2" align="center" rules="all">	
+
+
+<tr>
+	<th    colspan="2">
+<h4 align="center" class="eventheading down">  البيانات الشخصية  </h4>
+	</th>
+</tr>
+
 	
 <tr>		
  <th class="tablespace1 eventheading down"> الاسم:</th>
@@ -76,16 +78,11 @@
 </tr>
 
 
-</table>
-<br>
-
-
-
-<h4 class="eventheading" align="center" >
-حالة الإعاقة 
-</h4>
-
-<table class="fonty table2" align="center" rules="all">
+<tr>
+	<th    colspan="2">
+<h4 align="center" class="eventheading down">  حالة الإعاقة   </h4>
+	</th>
+</tr>
 
 
 
@@ -116,17 +113,15 @@
   <th class="tablespace1 down"><%= @applicant.reason %></th>
 </tr>
 
+ 
+ <tr>
+ 	<th    colspan="2">
+ <h4 align="center" class="eventheading down">  المؤهلات والخبرات   </h4>
+ 	</th>
+ </tr>
+ 
 
-</table>
-<br>
 
-
-<h4 class="eventheading" align="center" >
-المؤهلات والخبرات
-</h4>
-
-
-<table class="fonty table2" align="center" rules="all">
 <tr>	
   <th class="tablespace1 eventheading down">المستوى التعليمي:</th>
   <th class="tablespace1 down"><%= @applicant.education %></th>
@@ -187,21 +182,24 @@
 <br>
 <p class="fonty showpad">
 <strong>صورة البطاقة الشخصية:</strong> 
+<br>
 <%= image_tag @applicant.image.url, :class => "idimg"  %>
 </p>
-
+<br><br><br><br><br><br><br><br><br><br>
 <p class="fonty showpad">
  <strong>بطاقة العضوية لجمعية ذوي الإعاقة:</strong>
+ <br>
 <%= image_tag @applicant.membership.url , :class => "idimg"  %>
 </p>
-
+<br><br><br><br><br><br><br><br><br><br>
 
 <p class="fonty showpad">
     <strong>صورة السيرة الذاتية:</strong>
+	<br>
 	<%= image_tag @applicant.cv.url, :class => "idimg" %>
 </p>
 
-
+<br><br><br><br><br><br><br><br><br><br>
 
 <br>
 <br>
