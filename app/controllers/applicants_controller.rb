@@ -30,9 +30,6 @@ class ApplicantsController < ApplicationController
         if params[:currentJob]
           @applicants = @applicants.table_search('currentJob', params[:currentJob])
         end
-        if params[:age]
-          @applicants = @applicants.table_search('age', params[:age])
-        end
 
         respond_to do |format|
           format.html

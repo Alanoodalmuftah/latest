@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :pictures
   resources :questions
   resources :members
   resources :events
   resources :news
   resources :applicants
   root to: 'visitors#index'
-  devise_for :users#, controllers: { registrations: "registrations"}
+  devise_for :users
   resources :users
   
   

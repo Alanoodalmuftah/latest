@@ -46,37 +46,32 @@
 
         <td>
         </td>
-        <td class="filter">
+        <td class="filter center">
 <%= collection_select(:applicants, :name, Applicant.find_by_sql("select name from countries where name in (select nationality from applicants)"), :name, :name,{:selected => params[:nationality]},html_options = {:onchange => "on_change(0, this.value)"} ) %>
         </td>
-		        <td class="filter">
-		<%= collection_select(:applicants, :age, Applicant.find_by_sql("select distinct age from applicants"), :age, :age,{:selected => params[:age]},html_options = {:onchange => "on_change(1, this.value)"} ) %>
-		        </td>
-        <td class="filter">
-<%= collection_select(:applicants, :gender, Applicant.find_by_sql("select distinct gender from applicants"), :gender, :gender,{:selected => params[:gender]},html_options = {:onchange => "on_change(2, this.value)"} ) %>
+		<td>
+
+        <td class="filter center">
+<%= collection_select(:applicants, :gender, Applicant.find_by_sql("select distinct gender from applicants"), :gender, :gender,{:selected => params[:gender]},html_options = {:onchange => "on_change(1, this.value)"} ) %>
         </td>
-        <td class="filter">
-<%= collection_select(:applicants, :status, Applicant.find_by_sql("select distinct status from applicants"), :status, :status,{:selected => params[:status]},html_options = {:onchange => "on_change(3, this.value)"} ) %>
+        <td class="filter center">
+<%= collection_select(:applicants, :status, Applicant.find_by_sql("select distinct status from applicants"), :status, :status,{:selected => params[:status]},html_options = {:onchange => "on_change(2, this.value)"} ) %>
         </td>
 		
 		        <td>
 		        </td>
-		        <td class="filter">
-		<%= collection_select(:applicants, :disability, Applicant.find_by_sql("select distinct disability from applicants"), :disability, :disability,{:selected => params[:disability]},html_options = {:onchange => "on_change(4, this.value)"} ) %>
+				
+		        <td class="filter center">
+		<%= collection_select(:applicants, :disability, Applicant.find_by_sql("select distinct disability from applicants"), :disability, :disability,{:selected => params[:disability]},html_options = {:onchange => "on_change(3, this.value)"} ) %>
 		        </td>
-		        <td class="filter">
-		<%= collection_select(:applicants, :education, Applicant.find_by_sql("select distinct education from applicants"), :education, :education,{:selected => params[:education]},html_options = {:onchange => "on_change(5, this.value)"} ) %>
+		        <td class="filter center">
+		<%= collection_select(:applicants, :education, Applicant.find_by_sql("select distinct education from applicants"), :education, :education,{:selected => params[:education]},html_options = {:onchange => "on_change(4, this.value)"} ) %>
 		        </td>
-		        <td class="filter">
-		<%= collection_select(:applicants, :currentJob, Applicant.find_by_sql("select distinct currentJob from applicants"), :currentJob, :currentJob,{:selected => params[:currentJob]},html_options = {:onchange => "on_change(6, this.value)"} ) %>
-		        </td>
-
 
 		
         <script>
         var descriptions = [
           "nationality",
-		  "age",
           "gender",
           "status",
 			"disability",
@@ -85,12 +80,10 @@
         ];
         var vars_array = [
           "<%= params[:nationality] %>",
-		  "<%= params[:age] %>",
           "<%= params[:gender] %>",
           "<%= params[:status] %>",
 		  "<%= params[:disability] %>",
 	   	  "<%= params[:education] %>",
-		  "<%= params[:currentJob] %>",
         ];
         $(document).ready(function () {
           var selectors = $(".filter > select");
@@ -148,7 +141,7 @@
      <%#   <td><%= applicant.reason %></td> 
         <td class="tablespace fonty"><%= applicant.education %></td>
      <%#   <td><%= applicant.workshop %></td> 
-        <td class="tablespace fonty"><%= human_boolean(applicant.currentJob) %></td>
+      <%#  <td class="tablespace fonty"><%= human_boolean(applicant.currentJob) %></td>
      <%#   <td class="tablespace fonty"><%= applicant.jobDescription %></td> 
      <%#   <td><%= applicant.abilities %></td> 
      <%#   <td><%= applicant.preference %></td> 

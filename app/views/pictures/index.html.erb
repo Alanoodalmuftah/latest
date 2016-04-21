@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>معرض الصور</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pictures.each do |picture| %>
+      <tr>
+        <td><%= picture.title %></td>
+		<%= image_tag picture.image.url(:medium) %>
+        <td><%= link_to 'عرض', picture %></td>
+        <td><%= link_to 'تعديل', edit_picture_path(picture) %></td>
+        <td><%= link_to 'مسح', picture, method: :delete, data: { confirm: 'هل انت متأكد؟' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'صورة جديدة', new_picture_path %>
