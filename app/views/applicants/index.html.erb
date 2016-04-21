@@ -43,7 +43,7 @@
   </thead>
 
 
-
+<tr colspan="12">
         <td>
         </td>
         <td class="filter center">
@@ -58,8 +58,8 @@
 <%= collection_select(:applicants, :status, Applicant.find_by_sql("select distinct status from applicants"), :status, :status,{:selected => params[:status]},html_options = {:onchange => "on_change(2, this.value)"} ) %>
         </td>
 		
-		        <td>
-		        </td>
+		<td>
+		</td>
 				
 		        <td class="filter center">
 		<%= collection_select(:applicants, :disability, Applicant.find_by_sql("select distinct disability from applicants"), :disability, :disability,{:selected => params[:disability]},html_options = {:onchange => "on_change(3, this.value)"} ) %>
@@ -68,7 +68,7 @@
 		<%= collection_select(:applicants, :education, Applicant.find_by_sql("select distinct education from applicants"), :education, :education,{:selected => params[:education]},html_options = {:onchange => "on_change(4, this.value)"} ) %>
 		        </td>
 
-		
+</tr>
         <script>
         var descriptions = [
           "nationality",
@@ -141,7 +141,7 @@
      <%#   <td><%= applicant.reason %></td> 
         <td class="tablespace fonty"><%= applicant.education %></td>
      <%#   <td><%= applicant.workshop %></td> 
-      <%#  <td class="tablespace fonty"><%= human_boolean(applicant.currentJob) %></td>
+       <td class="tablespace fonty"><%= human_boolean(applicant.currentJob) %></td>
      <%#   <td class="tablespace fonty"><%= applicant.jobDescription %></td> 
      <%#   <td><%= applicant.abilities %></td> 
      <%#   <td><%= applicant.preference %></td> 

@@ -11,19 +11,21 @@
     </div>
   <% end %>
 
-
-  <div class="field">
-    <%= f.label :image %><br>
+<div class="q">
+  <div class="field fonty">
+    <%= f.label :image ,"الصورة" %><br>
     <%= f.file_field :image %>
   </div>
   <br></br>
-  <div class="field">
-    <%= f.label :title %><br>
+  <div class="field fonty">
+    <%= f.label :title, "عنوان الصورة" %><br>
     <%= f.text_field :title %>
   </div>
   <br></br>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions" align="right">
+    <%= f.submit "انشاء صورة", class:'fonty'%>
   </div>
+  
+</div>
 <% end %>

@@ -1,13 +1,16 @@
-<p id="notice"><%= notice %></p>
-
+</br>
+</br>
+</br>
+<p class="fonty" align="center">
 <%= image_tag @picture.image.url(:medium) %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @picture.title %>
+
+  <strong class="fonty">عنوان الصورة:</strong>
+  <%= @picture.title  %>
+
+
+</br>
+</br>
+<%= link_to 'تعديل', edit_picture_path(@picture) , class:"fonty", align:'canter' %> |
+<%= link_to 'رجوع', pictures_path , class:"fonty" %>
 </p>
-
-
-
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
